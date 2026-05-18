@@ -31,18 +31,6 @@ _C = {
     "dim":     "\033[2m",
 }
 
-TASK_EMOJI = {
-    "implement": "🔨",
-    "debug":     "🐛",
-    "refactor":  "♻️",
-    "review":    "👁️",
-    "design":    "🏗️",
-    "test":      "🧪",
-    "optimize":  "⚡",
-    "explain":   "📖",
-    "security":  "🔒",
-}
-
 TASK_DESCRIPTIONS = {
     "implement": "Build something new from a description",
     "debug":     "Diagnose and fix a bug or unexpected behaviour",
@@ -59,7 +47,7 @@ TASK_DESCRIPTIONS = {
 def _print_banner():
     click.echo(
         f"\n{_C['bold']}{_C['cyan']}╔══════════════════════════════════════╗\n"
-        f"║  🧠  prompt-forge  ·  Senior Dev AI  ║\n"
+        f"║    prompt-forge  ·  Senior Dev AI    ║\n"
         f"╚══════════════════════════════════════╝{_C['reset']}\n"
     )
 
@@ -80,8 +68,6 @@ def _copy_to_clipboard(text: str) -> bool:
 
 def _print_result(prompt: str, task_type: str, lang: str | None,
                   *, copy: bool, raw: bool):
-    emoji = TASK_EMOJI.get(task_type, "🔨")
-
     if raw:
         click.echo(prompt)
         return
@@ -89,7 +75,7 @@ def _print_result(prompt: str, task_type: str, lang: str | None,
     # Header
     click.echo(
         f"\n{_C['bold']}{_C['green']}{'─'*60}{_C['reset']}\n"
-        f"{_C['bold']}{emoji}  Task type : {_C['cyan']}{task_type.upper()}{_C['reset']}"
+        f"{_C['bold']}Task type : {_C['cyan']}{task_type.upper()}{_C['reset']}"
         + (f"   {_C['dim']}lang: {lang}{_C['reset']}" if lang else "")
         + f"\n{_C['bold']}{_C['green']}{'─'*60}{_C['reset']}\n"
     )
@@ -127,9 +113,8 @@ def _interactive():
 
     # Show task type menu
     for i, (t, desc) in enumerate(TASK_DESCRIPTIONS.items(), 1):
-        emoji = TASK_EMOJI[t]
         click.echo(
-            f"  {_C['cyan']}{i:2}.{_C['reset']} {emoji}  "
+            f"  {_C['cyan']}{i:2}.{_C['reset']}  "
             f"{_C['bold']}{t:<12}{_C['reset']} {_C['dim']}{desc}{_C['reset']}"
         )
 
@@ -202,7 +187,7 @@ def _interactive():
 @click.version_option(package_name="prompt-forge")
 def main(task, task_type, lang, copy, raw, interactive_mode, list_types):
     """
-    🧠 prompt-forge — Generate senior-dev quality prompts instantly.
+    prompt-forge — Generate senior-dev quality prompts instantly.
 
     \b
     Quick examples:
@@ -219,7 +204,7 @@ def main(task, task_type, lang, copy, raw, interactive_mode, list_types):
         click.echo(f"\n{_C['bold']}Available task types:{_C['reset']}\n")
         for t, desc in TASK_DESCRIPTIONS.items():
             click.echo(
-                f"  {TASK_EMOJI[t]}  {_C['bold']}{_C['cyan']}{t:<12}{_C['reset']}"
+                f"  {_C['bold']}{_C['cyan']}{t:<12}{_C['reset']}"
                 f"  {desc}"
             )
         click.echo()

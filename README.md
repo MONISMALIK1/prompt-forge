@@ -1,4 +1,4 @@
-# 🧠 prompt-forge
+# prompt-forge
 
 > Turn a rough task description into a **senior-engineer-quality prompt** in one command.
 
@@ -41,17 +41,17 @@ pf --list-types
 
 ## Task types
 
-| # | Type | Emoji | When to use |
-|---|------|-------|-------------|
-| 1 | `implement` | 🔨 | Build something new |
-| 2 | `debug` | 🐛 | Diagnose and fix a bug |
-| 3 | `refactor` | ♻️ | Improve code without changing behaviour |
-| 4 | `review` | 👁️ | Critique code for quality and correctness |
-| 5 | `design` | 🏗️ | Architect a system, API, or data model |
-| 6 | `test` | 🧪 | Write comprehensive tests |
-| 7 | `optimize` | ⚡ | Improve performance or memory usage |
-| 8 | `explain` | 📖 | Understand and document existing code |
-| 9 | `security` | 🔒 | Audit for vulnerabilities and harden code |
+| # | Type | When to use |
+|---|------|-------------|
+| 1 | `implement` | Build something new |
+| 2 | `debug` | Diagnose and fix a bug |
+| 3 | `refactor` | Improve code without changing behaviour |
+| 4 | `review` | Critique code for quality and correctness |
+| 5 | `design` | Architect a system, API, or data model |
+| 6 | `test` | Write comprehensive tests |
+| 7 | `optimize` | Improve performance or memory usage |
+| 8 | `explain` | Understand and document existing code |
+| 9 | `security` | Audit for vulnerabilities and harden code |
 
 Task type is **auto-detected** from your description — you only need `--type` to override.
 

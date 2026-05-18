@@ -158,7 +158,7 @@ You are a principal engineer doing a thorough code review{lang_hint}.
 
 ## Review rubric — think like a senior dev
 
-Rate each area as ✅ Good / ⚠️ Needs work / ❌ Blocking issue:
+Rate each area as  [+] Good  /  [~] Needs work  /  [!] Blocking issue:
 
 | Area | Checklist |
 |------|-----------|
@@ -253,8 +253,8 @@ You are a senior engineer writing a comprehensive test suite{lang_hint}.
 **Test quality rules**
 - Each test should have one reason to fail (single assertion focus).
 - Test names must describe *behaviour*, not implementation.
-  ✅ `test_transfer_fails_when_balance_insufficient`
-  ❌ `test_transfer_error`
+  Good : `test_transfer_fails_when_balance_insufficient`
+  Avoid: `test_transfer_error`
 - Avoid testing implementation details — test the public contract.
 - No test should depend on the order of execution.
 
@@ -363,7 +363,7 @@ You are a senior application security engineer doing a security review{lang_hint
 ## Security review checklist — think like a senior dev
 
 **OWASP Top 10 scan**
-Check each category and mark as ✅ Safe / ⚠️ Needs review / ❌ Vulnerable:
+Check each category and mark as  [+] Safe  /  [~] Needs review  /  [!] Vulnerable:
 
 | # | Category | Finding |
 |---|----------|---------|
